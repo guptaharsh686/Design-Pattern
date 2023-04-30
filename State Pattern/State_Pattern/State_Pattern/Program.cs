@@ -6,7 +6,13 @@ namespace State_Pattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Canvas Tool = new SelectionTool(ToolType.SELECTION);
+            Tool.MouseUp();
+            Tool.MouseDown();
+
+            Tool = new ErasorTool(ToolType.ERASOR);
+            Tool.MouseUp();
+            Tool.MouseDown();
         }
     }
 }
