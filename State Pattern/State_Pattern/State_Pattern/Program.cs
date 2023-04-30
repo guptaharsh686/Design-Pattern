@@ -6,7 +6,15 @@ namespace State_Pattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var canvas = new Canvas();
+
+            canvas.CurrentTool = new SelectionTool();
+            canvas.MouseUpRequest();
+            canvas.MouseDownRequest();
+
+            canvas.CurrentTool = new BrushTool();
+            canvas.MouseDownRequest();
+            canvas.MouseUpRequest();
         }
     }
 }

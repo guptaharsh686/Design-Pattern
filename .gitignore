@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/State Pattern/State_Pattern/State_Pattern/bin/Debug/netcoreapp3.1
+/State Pattern/State_Pattern/State_Pattern/obj/Debug/netcoreapp3.1
