@@ -5,3 +5,6 @@
 /State Pattern/State_Pattern/State_Pattern/bin/Debug/netcoreapp3.1
 /State Pattern/State_Pattern/State_Pattern/obj/Debug/netcoreapp3.1
 *.v2
+/State Pattern/State_pattern_Exercise/DirectionServiceExercise/DirectionServiceExercise/obj
+/State Pattern/State_pattern_Exercise/DirectionServiceExercise/.vs/DirectionServiceExercise/v16
+/State Pattern/State_pattern_Exercise/DirectionServiceExercise/DirectionServiceExercise/bin/Debug/netcoreapp3.1
