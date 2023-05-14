@@ -1,5 +1,6 @@
 ﻿using System;
 using Command_Pattern.Application;
+using Command_Pattern.Editor;
 
 namespace Command_Pattern
 {
@@ -8,15 +9,20 @@ namespace Command_Pattern
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            var service = new CustomerService();
-            var addCustomerCommand = new AddCustomerCommand(service);
-            var addButton = new Button(addCustomerCommand);
 
-            var searchCustomerCommand = new SearchCustomerCommand(service);
-            var searchButton = new Button(searchCustomerCommand);
+            var history = new History();
+            var document = new HTMLDocument();
 
-            addButton.click();
-            searchButton.click();
+            document.setContent("Hello World");
+
+            var boldCommand = new BoldCommand(document, history);
+            boldCommand.execute();
+            Console.WriteLine($"{document.getContent()}");
+
+            var undoCommand = new UndoCommand(history);
+            undoCommand.execute();
+            Console.WriteLine($"{document.getContent()}");
+
         }
     }
 }
