@@ -6,16 +6,7 @@ namespace Strategy_Pattern
 {
     public class ImageStorage
     {
-        private CompressionAlgo compressor;
-        private FilterAlgo filter;
-
-        public ImageStorage(CompressionAlgo compressor, FilterAlgo filter)
-        {
-            this.compressor = compressor;
-            this.filter = filter;
-        }
-
-        public void store(string fileName)
+        public void store(string fileName,CompressionAlgo compressor, FilterAlgo filter)
         {
             //JPEG,PNG - Image compression algo
             compressor.compress(fileName);

@@ -9,10 +9,12 @@ namespace Strategy_Pattern
             Console.WriteLine("Hello World!");
 
 
-            var imagestorage = new ImageStorage(new jpegCompression(), new  BandWFilter());
+            var imagestorage = new ImageStorage();
 
-            imagestorage.store("a");
-        
+            imagestorage.store("a",new jpegCompression(),new BandWFilter());
+
+            imagestorage.store("a", new pngCompression(), new BandWFilter());
+
         }
     }
 }
