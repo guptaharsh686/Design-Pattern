@@ -6,17 +6,9 @@ namespace Template_Method_pattern
 {
     public class TransferMoneyTask : Task
     {
-
-        public TransferMoneyTask(AuditTrail auditTrail) : base(auditTrail)
+        protected override void doExecute()
         {
-
-        }
-
-        public override void execute()
-        {
-            auditTrail.record();
-
-            Console.WriteLine("Transfer Money Sucessful..");
+            Console.WriteLine("Transfer money");
         }
     }
 }

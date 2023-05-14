@@ -6,15 +6,10 @@ namespace Template_Method_pattern
 {
     public class GenerateReportTask : Task
     {
-        public GenerateReportTask(AuditTrail auditTrail) : base(auditTrail)
+        protected override void doExecute()
         {
+            Console.WriteLine("Generate Report task");
         }
 
-        public override void execute()
-        {
-            auditTrail.record();
-
-            Console.WriteLine("Generate report executed sucessfully");
-        }
     }
 }
