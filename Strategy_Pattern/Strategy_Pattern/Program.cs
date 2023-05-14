@@ -7,6 +7,12 @@ namespace Strategy_Pattern
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+
+            var imagestorage = new ImageStorage(new jpegCompression(), new  BandWFilter());
+
+            imagestorage.store("a");
+        
         }
     }
 }
