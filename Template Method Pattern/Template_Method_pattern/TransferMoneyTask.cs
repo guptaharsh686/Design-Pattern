@@ -4,16 +4,15 @@ using System.Text;
 
 namespace Template_Method_pattern
 {
-    public class TransferMoneyTask
+    public class TransferMoneyTask : Task
     {
-        private AuditTrail auditTrail;
 
-        public TransferMoneyTask(AuditTrail auditTrail)
+        public TransferMoneyTask(AuditTrail auditTrail) : base(auditTrail)
         {
-            this.auditTrail = auditTrail;
+
         }
 
-        public void execute()
+        public override void execute()
         {
             auditTrail.record();
 

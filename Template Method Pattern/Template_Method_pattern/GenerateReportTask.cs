@@ -4,17 +4,13 @@ using System.Text;
 
 namespace Template_Method_pattern
 {
-    public class GenerateReportTask
+    public class GenerateReportTask : Task
     {
-        private AuditTrail auditTrail;
-
-        public GenerateReportTask(AuditTrail auditTrail)
+        public GenerateReportTask(AuditTrail auditTrail) : base(auditTrail)
         {
-            this.auditTrail = auditTrail;
         }
 
-
-        public void execute()
+        public override void execute()
         {
             auditTrail.record();
 
