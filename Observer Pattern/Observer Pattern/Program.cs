@@ -10,9 +10,9 @@ namespace Observer_Pattern
 
             var ds = new DataSource();
 
-            var sheet1 = new SpreadSheet();
-            var sheet2 = new SpreadSheet();
-            var chart = new Chart();
+            var sheet1 = new SpreadSheet(ds);
+            var sheet2 = new SpreadSheet(ds);
+            var chart = new Chart(ds);
 
             ds.addObserver(sheet1);
             ds.addObserver(sheet2);

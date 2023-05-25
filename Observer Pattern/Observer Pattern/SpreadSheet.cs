@@ -6,9 +6,16 @@ namespace Observer_Pattern
 {
     public class SpreadSheet : IObserver
     {
-        public void update(int value)
+        private readonly DataSource ds;
+
+        public SpreadSheet(DataSource ds)
         {
-            Console.WriteLine($"SpreadSheet : Value is changed value = {value}");
+            this.ds = ds;
+        }
+
+        public void update()
+        {
+            Console.WriteLine($"SpreadSheet : Value is changed value = {ds.getValue()}");
         }
     }
 }

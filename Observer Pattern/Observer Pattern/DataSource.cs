@@ -16,7 +16,7 @@ namespace Observer_Pattern
         public void setValue(int value)
         {
             this.value = value;
-            notifyObserver(value);
+            notifyObserver();
         }
     }
 }

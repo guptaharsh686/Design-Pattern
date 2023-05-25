@@ -6,10 +6,16 @@ namespace Observer_Pattern
 {
     public class Chart : IObserver
     {
+        private readonly DataSource ds;
 
-        public void update(int value)
+        public Chart(DataSource ds)
         {
-            Console.WriteLine($"Chart : Value is changed value = {value}");
+            this.ds = ds;
+        }
+
+        public void update()
+        {
+            Console.WriteLine($"Chart : Value is changed value = {ds.getValue()}");
         }
     }
 }
