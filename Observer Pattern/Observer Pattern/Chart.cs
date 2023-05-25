@@ -7,9 +7,9 @@ namespace Observer_Pattern
     public class Chart : IObserver
     {
 
-        public void update()
+        public void update(int value)
         {
-            Console.WriteLine($"Chart : Value is changed");
+            Console.WriteLine($"Chart : Value is changed value = {value}");
         }
     }
 }

@@ -21,11 +21,11 @@ namespace Observer_Pattern
         }
 
 
-        public void notifyObserver()
+        public void notifyObserver(int value)
         {
             foreach (var ob in observers)
             {
-                ob.update();
+                ob.update(value);
             }
         }
     }

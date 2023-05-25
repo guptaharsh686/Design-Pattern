@@ -6,9 +6,9 @@ namespace Observer_Pattern
 {
     public class SpreadSheet : IObserver
     {
-        public void update()
+        public void update(int value)
         {
-            Console.WriteLine($"SpreadSheet : Value is changed");
+            Console.WriteLine($"SpreadSheet : Value is changed value = {value}");
         }
     }
 }

@@ -6,6 +6,6 @@ namespace Observer_Pattern
 {
     public interface IObserver
     {
-        public void update();
+        public void update(int value);
     }
 }
