@@ -6,9 +6,16 @@ namespace Chain_Of_Responsibility_Exercise
 {
     public class QuickBooksReader : DataReader
     {
-        protected override void doRead(string fileName)
+
+        public QuickBooksReader(string fileName, DataReader next) : base(fileName,next)
+        {
+        }
+
+        protected override bool doRead()
         {
             Console.WriteLine("Reading data from a QuickBooks file.");
+            return false;
+
         }
 
         protected override string getExtension()

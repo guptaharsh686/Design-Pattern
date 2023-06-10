@@ -8,14 +8,17 @@ namespace Chain_Of_Responsibility_Exercise
     {
         public static DataReader getDataReaderChain()
         {
-            var excelReader = new ExcelReader();
-            var numbersReader = new NumbersReader();
-            var quickBooksReader = new QuickBooksReader();
+            
+            var quickBooksReader = new QuickBooksReader("data.qbw", null);
+            var numbersReader = new NumbersReader("data.numbers", quickBooksReader);
+            var excelReader = new ExcelReader("data.xls", numbersReader);
 
-            quickBooksReader.setNext(numbersReader);
-            numbersReader.setNext(excelReader);
+            //quickBooksReader.setNext(numbersReader);
+            //numbersReader.setNext(excelReader);
+            //excelReader.setNext(null);
+            //quickBooksReader.setNext(null);
 
-            return quickBooksReader;
+            return excelReader;
         }
     }
 }

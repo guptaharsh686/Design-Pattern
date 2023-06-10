@@ -6,9 +6,14 @@ namespace Chain_Of_Responsibility_Exercise
 {
     public class ExcelReader : DataReader
     {
-        protected override void doRead(string fileName)
+        public ExcelReader(string filename,DataReader dataReader) : base(filename,dataReader)
+        {
+        }
+
+        protected override bool doRead()
         {
             Console.WriteLine("Reading data from an Excel spreadsheet.");
+            return false;
         }
 
         protected override string getExtension()

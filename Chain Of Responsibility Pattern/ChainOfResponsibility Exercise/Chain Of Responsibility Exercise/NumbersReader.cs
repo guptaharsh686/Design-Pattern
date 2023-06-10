@@ -6,9 +6,15 @@ namespace Chain_Of_Responsibility_Exercise
 {
     public class NumbersReader : DataReader
     {
-        protected override void doRead(string fileName)
+        public NumbersReader(string filename,DataReader next) : base(filename,next)
+        {
+        }
+
+        protected override bool doRead()
         {
             Console.WriteLine("Reading data from a Numbers spreadsheet: ");
+            return false;
+
         }
 
         protected override string getExtension()

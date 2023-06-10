@@ -7,28 +7,30 @@ namespace Chain_Of_Responsibility_Exercise
     public abstract class DataReader
     {
         private DataReader next;
+        private string filename;
 
-        public void setNext(DataReader next)
+        protected DataReader(string filename,DataReader next)
         {
             this.next = next;
+            this.filename = filename;
         }
 
-        public void read(String fileName)
+        public void read()
         {
-            if (fileName.EndsWith(getExtension()))
+            if (filename.EndsWith(getExtension()))
             {
-                this.doRead(fileName);
-                return;
+                if(this.doRead())
+                    return;
             }
 
             if (next != null)
-                next.read(fileName);
+                next.read();
             else
                 throw new NotSupportedException("File format not supported.");
         }
 
         protected abstract String getExtension();
 
-        protected abstract void doRead(String fileName);
+        protected abstract bool doRead();
     }
 }
