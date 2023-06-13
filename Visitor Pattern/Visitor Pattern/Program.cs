@@ -13,6 +13,7 @@ namespace Visitor_Pattern
             htmldoc.addNode(new AnchorNode());
 
             htmldoc.execute(new HightlightOperation());
+            htmldoc.execute(new PlainTextOperation());
         }
     }
 }
