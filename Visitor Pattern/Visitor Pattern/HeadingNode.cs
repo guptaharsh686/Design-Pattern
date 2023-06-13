@@ -6,9 +6,9 @@ namespace Visitor_Pattern
 {
     public class HeadingNode : HTMLNode
     {
-        public void Highlight()
+        public void execute(IOperation operation)
         {
-            Console.WriteLine("Highlighting HeadingNode");
+            operation.apply(this);
         }
     }
 }

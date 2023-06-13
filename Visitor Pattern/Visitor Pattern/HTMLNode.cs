@@ -6,6 +6,6 @@ namespace Visitor_Pattern
 {
     public interface HTMLNode
     {
-        void Highlight();
+        void execute(IOperation operation);
     }
 }

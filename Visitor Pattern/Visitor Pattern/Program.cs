@@ -12,7 +12,7 @@ namespace Visitor_Pattern
             htmldoc.addNode(new HeadingNode());
             htmldoc.addNode(new AnchorNode());
 
-            htmldoc.highlight();
+            htmldoc.execute(new HightlightOperation());
         }
     }
 }

@@ -13,11 +13,11 @@ namespace Visitor_Pattern
             nodes.Add(node);
         }
 
-        public void highlight()
+        public void execute(IOperation operation)
         {
-            foreach (var item in nodes)
+            foreach (var node in nodes)
             {
-                item.Highlight();
+                node.execute(operation);
             }
         }
     }
