@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Composite_Pattern_Exercise
 {
-    public class Truck
+    public class Truck : ITeam
     {
         public void deploy()
         {

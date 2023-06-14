@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Composite_Pattern_Exercise
 {
-    public class Team
+    public class Team : ITeam
     {
-        private List<Object> resources = new List<object>();
+        private List<ITeam> resources = new List<ITeam>();
 
-        public void add(Object resource)
+        public void add(ITeam resource)
         {
             resources.Add(resource);
         }
@@ -17,18 +17,7 @@ namespace Composite_Pattern_Exercise
         {
             foreach (var resource in resources)
             {
-                if (resource is Truck)
-                {
-                    ((Truck)resource).deploy();
-                }
-                else if (resource is HumanResource)
-                {
-                    ((HumanResource)resource).deploy();
-                }
-                else
-                {
-                    ((Team)resource).deploy();
-                }
+                resource.deploy();
             }
         }
     }

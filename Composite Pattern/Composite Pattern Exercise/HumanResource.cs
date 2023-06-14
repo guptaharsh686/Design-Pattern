@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Composite_Pattern_Exercise
 {
-    public class HumanResource
+    public class HumanResource : ITeam
     {
         public void deploy()
         {
