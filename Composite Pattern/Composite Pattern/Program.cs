@@ -23,8 +23,10 @@ namespace Composite_Pattern
             group2.addShape(rectangle1);
             group2.addShape(rectangle2);
 
-            group1.render();
-            group2.render();
+            var group = new Group();
+            //group.addShape(group1); this is not possible with current implementation
+            // Represent hirarchy structure not possible will do changes next
+
 
         }
     }
