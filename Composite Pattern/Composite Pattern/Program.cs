@@ -27,6 +27,10 @@ namespace Composite_Pattern
             //group.addShape(group1); this is not possible with current implementation
             // Represent hirarchy structure not possible will do changes next
 
+            group.addShape(group1);
+            group.addShape(group2);
+            group.render();
+
 
         }
     }
