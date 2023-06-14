@@ -30,6 +30,7 @@ namespace Composite_Pattern
             group.addShape(group1);
             group.addShape(group2);
             group.render();
+            group.move();
 
 
         }

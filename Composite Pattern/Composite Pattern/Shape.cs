@@ -4,8 +4,13 @@ using System.Text;
 
 namespace Composite_Pattern
 {
-    public class Shape
+    public class Shape : IComponent
     {
+        public void move()
+        {
+            Console.WriteLine("Moving Shape");
+        }
+
         public void render()
         {
             Console.WriteLine("Render Shape");

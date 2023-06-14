@@ -4,34 +4,30 @@ using System.Text;
 
 namespace Composite_Pattern
 {
-    public class Group
+    public class Group : IComponent
     {
-        private List<Object> shapes = new List<Object>();
-        //Representing shapes as Object type to get objects of group class as well as shape class.
+        private List<IComponent> components = new List<IComponent>();
         
         
-        public void addShape(object shape)
+        public void addShape(IComponent shape)
         {
-            shapes.Add(shape);
+            components.Add(shape);
+        }
+
+        public void move()
+        {
+            foreach (var component in components)
+            {
+                component.move();
+            }
         }
 
         public void render()
         {
-            foreach (var shape in shapes)
+            foreach (var component in components)
             {
-                if(shape is Shape)
-                {
-                    ((Shape)shape).render();
-                }
-                //type checking and then calling render method according to type.
-                else if(shape is Group)
-                {
-                    ((Group)shape).render();
-                }
+                component.render();
             }
-            //problem with this approach is that
-            //we are explicitely converting the types and for other functionality we have to do similar thing and repeat the code for
-            //casting and checking.
         }
 
     }
