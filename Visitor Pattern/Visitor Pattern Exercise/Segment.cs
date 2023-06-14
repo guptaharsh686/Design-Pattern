@@ -4,21 +4,8 @@ using System.Text;
 
 namespace Visitor_Pattern_Exercise
 {
-    public class Segment
+    public interface Segment
     {
-        public void reduceNoise()
-        {
-            Console.WriteLine("Reduce noise");
-        }
-
-        public void addReverb()
-        {
-            Console.WriteLine("Add reverb");
-        }
-
-        public void normalize()
-        {
-            Console.WriteLine("Normalize");
-        }
+        void execute(IFilterOperation filterOperation);
     }
 }

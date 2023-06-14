@@ -23,20 +23,20 @@ namespace Visitor_Pattern_Exercise
         public void reduceNoise()
         {
             foreach(var segment in segments)
-                segment.reduceNoise();
+                segment.execute(new ReduceNoiseFilter());
         }
 
         public void addReverb()
         {
             foreach(var segment in segments)
-                segment.addReverb();
+                segment.execute(new AddReverbFilter());
         }
 
 
         public void normalize()
         {
             foreach(var segment in segments)
-                segment.normalize();
+                segment.execute(new NormalizationFilter());
         }
     }
 }
