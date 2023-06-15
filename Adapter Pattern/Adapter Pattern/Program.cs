@@ -15,6 +15,8 @@ namespace Adapter_Pattern
             //imageview.apply(new CaramelFilter());
             //this will not work as of now because the CaramelFilter class dosenot implement IFilter interface and it is a third party 
             // library it dosenot know anything about IFilter we need to solve this using Adapter pattern
+
+            imageview.apply(new CaramelFilterAdapter(new CaramelFilter()));
         }
     }
 }
