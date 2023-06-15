@@ -34,7 +34,7 @@ namespace Decorator_Pattern_Exercise
             string errorIcon = hasError ? "[Error]" : "";
             string mainIcon = isMain ? "[Main]" : "";
 
-            return String.Format("%s %s %s", name, errorIcon, mainIcon);
+            return $"{name} {errorIcon} {mainIcon}";
         }
 
         public void setHasError(bool hasError)

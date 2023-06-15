@@ -7,6 +7,7 @@ namespace Decorator_Pattern_Exercise
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Demo.show();
         }
     }
 }
