@@ -4,12 +4,19 @@ using System.Text;
 
 namespace Decorator_Pattern
 {
-    public class CompressedCloudStream : CloudStream
+    public class CompressedCloudStream : IStream
     {
-        public override void write(string data)
+        private IStream stream;
+
+        public CompressedCloudStream(IStream stream)
+        {
+            this.stream = stream;
+        }
+
+        public void write(string data)
         {
             var compressed = compress(data);
-            base.write(compressed);
+            stream.write(compressed);
         }
 
         private string compress(string data)

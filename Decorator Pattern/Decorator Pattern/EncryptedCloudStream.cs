@@ -4,18 +4,25 @@ using System.Text;
 
 namespace Decorator_Pattern
 {
-    public class EncryptedCloudStream : CloudStream
+    public class EncryptedCloudStream : IStream
     {
-        public override void write(string data)
+        private IStream stream;
+
+        public EncryptedCloudStream(IStream stream)
+        {
+            this.stream = stream;
+        }
+
+        public void write(string data)
         {
             var encrypted = encrypt(data);
-            base.write(encrypted);
+            stream.write(encrypted);
         }
 
 
         private string encrypt(string data)
         {
-            return "@#$%WCGTD$%^&$#@";
+            return "encrypted : " + "@#$%WCGTD$%^&$#@";
         }
     }
 }

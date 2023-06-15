@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Decorator_Pattern
 {
-    public class CloudStream
+    public class CloudStream : IStream
     {
-        public virtual void write(string data)
+        public void write(string data)
         {
             Console.WriteLine("Storing " + data);
         }
