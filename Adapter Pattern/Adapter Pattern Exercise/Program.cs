@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Adapter_Pattern_Exercise.Gmail;
+using System;
 
 namespace Adapter_Pattern_Exercise
 {
@@ -7,6 +8,11 @@ namespace Adapter_Pattern_Exercise
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            var emailClient = new EmailClient();
+            emailClient.addProvider(new GmailProviderAdapter(new GmailClient()));
+            emailClient.downloadEmails();
+
         }
     }
 }
