@@ -8,16 +8,13 @@ namespace Decorator_Pattern_Exercise
     {
         public void openProject(String path)
         {
-            List<Artefact> artefacts = new List<Artefact>
+            List<IArtifact> artefacts = new List<IArtifact>
             {
-                new Artefact("Main"),
-                new Artefact("Demo"),
-                new Artefact("EmailClient"),
-                new Artefact("EmailProvider"),
+                new MainMarkerArtifact(new Artifact("Main")),
+                new Artifact("Demo"),
+                new ErrorMarkerArtefact(new Artifact("EmailClient")),
+                new MainMarkerArtifact( new ErrorMarkerArtefact( new Artifact("EmailProvider"))),
             };
-
-            artefacts[0].setMain(true);
-            artefacts[2].setHasError(true);
 
             foreach(var artefact in artefacts)
                 Console.WriteLine(artefact.render());
