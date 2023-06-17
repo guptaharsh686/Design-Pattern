@@ -8,17 +8,16 @@ namespace Flyweight_Pattern_Exercise
     {
         private int MAX_ROWS = 3;
         private int MAX_COLS = 3;
+        private FormattingAttributes attribute;
 
         // In a real app, these values should not be hardcoded here.
         // They should be read from a configuration file.
-        private String fontFamily = "Times New Roman";
-        private int fontSize = 12;
-        private bool isBold = false;
  
         private Cell[,] cells = new Cell[3,3];
 
-        public Spreadsheet()
+        public Spreadsheet(FormattingAttributes attributes)
         {
+            this.attribute = attributes;
             generateCells();
         }
 
@@ -29,12 +28,12 @@ namespace Flyweight_Pattern_Exercise
             cells[row,col].setContent(content);
         }
 
-        public void setFontFamily(int row, int col, String fontFamily)
+        public void setFontFamily(int row, int col, FormattingAttributes fontFamily)
         {
             ensureCellExists(row, col);
 
             var cell = cells[row,col];
-            cells[row,col].setFontFamily(fontFamily);
+            cells[row,col].setFontFamily(fontFamily.getFontFamily());
         }
 
         private void ensureCellExists(int row, int col)
@@ -51,8 +50,7 @@ namespace Flyweight_Pattern_Exercise
             for (var row = 0; row < MAX_ROWS; row++)
                 for (var col = 0; col < MAX_COLS; col++)
                 {
-                    var cell = new Cell(row, col);
-                    cell.setFontFamily(fontFamily);
+                    var cell = new Cell(row, col,attribute);
                     cells[row,col] = cell;
                 }
         }
