@@ -9,13 +9,11 @@ namespace Flyweight_Pattern_Exercise
         private int row;
         private int column;
         private String content;
-        FormattingAttributes attributes;
 
-        public Cell(int row, int column,FormattingAttributes attributes)
+        public Cell(int row, int column)
         {
             this.row = row;
             this.column = column;
-            this.attributes = attributes;
         }
 
         public String getContent()
