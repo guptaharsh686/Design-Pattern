@@ -11,8 +11,11 @@ namespace Flyweight_Pattern_Exercise
 
         // In a real app, these values should not be hardcoded here.
         // They should be read from a configuration file.
- 
-        private Cell[,] cells = new Cell[3,3];
+        private String fontFamily = "Times New Roman";
+        private int fontSize = 12;
+        private bool isBold = false;
+
+        private Cell[,] cells = new Cell[3, 3];
 
         public Spreadsheet()
         {
@@ -26,7 +29,7 @@ namespace Flyweight_Pattern_Exercise
             cells[row,col].setContent(content);
         }
 
-        public void setFontFamily(int row, int col,string fontFamily)
+        public void setFontFamily(int row, int col, String fontFamily)
         {
             ensureCellExists(row, col);
 
@@ -37,10 +40,10 @@ namespace Flyweight_Pattern_Exercise
         private void ensureCellExists(int row, int col)
         {
             if (row < 0 || row >= MAX_ROWS)
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentException();
 
             if (col < 0 || col >= MAX_COLS)
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentException();
         }
 
         private void generateCells()
@@ -49,6 +52,7 @@ namespace Flyweight_Pattern_Exercise
                 for (var col = 0; col < MAX_COLS; col++)
                 {
                     var cell = new Cell(row, col);
+                    cell.setFontFamily(fontFamily);
                     cells[row,col] = cell;
                 }
         }
