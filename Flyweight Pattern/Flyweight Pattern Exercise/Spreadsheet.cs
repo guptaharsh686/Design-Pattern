@@ -11,14 +11,13 @@ namespace Flyweight_Pattern_Exercise
 
         // In a real app, these values should not be hardcoded here.
         // They should be read from a configuration file.
-        private String fontFamily = "Times New Roman";
-        private int fontSize = 12;
-        private bool isBold = false;
 
         private Cell[,] cells = new Cell[3, 3];
+        private AttributesFactory attributesFactory;
 
-        public Spreadsheet()
+        public Spreadsheet(AttributesFactory attributesFactory)
         {
+            this.attributesFactory = attributesFactory;
             generateCells();
         }
 
@@ -34,7 +33,9 @@ namespace Flyweight_Pattern_Exercise
             ensureCellExists(row, col);
 
             var cell = cells[row,col];
-            cells[row,col].setFontFamily(fontFamily);
+            var context = cell.GetAttributeContext();
+            var newContext = attributesFactory.GetAttributes(fontFamily, context.getFontSize(), context.get_isBold());
+            cells[row,col].setAttributeContext(newContext);
         }
 
         private void ensureCellExists(int row, int col)
@@ -52,7 +53,8 @@ namespace Flyweight_Pattern_Exercise
                 for (var col = 0; col < MAX_COLS; col++)
                 {
                     var cell = new Cell(row, col);
-                    cell.setFontFamily(fontFamily);
+                    var context = attributesFactory.GetAttributes(FontFamily.TIMES_NEW_ROMAN.ToString());
+                    cell.setAttributeContext(context);
                     cells[row,col] = cell;
                 }
         }

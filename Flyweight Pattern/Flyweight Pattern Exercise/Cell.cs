@@ -9,19 +9,12 @@ namespace Flyweight_Pattern_Exercise
         private int row;
         private int column;
         private String content;
-        private String fontFamily;
-        private int fontSize;
-        private bool isBold;
+        private Attributes attributes;
 
         public Cell(int row, int column)
         {
             this.row = row;
             this.column = column;
-        }
-
-        public String getContent()
-        {
-            return content;
         }
 
         public void setContent(String content)
@@ -31,37 +24,29 @@ namespace Flyweight_Pattern_Exercise
 
         public String getFontFamily()
         {
-            return fontFamily;
+            return this.attributes.getFontFamily() ;
         }
 
         public void setFontFamily(String fontFamily)
         {
-            this.fontFamily=fontFamily;
+            this.attributes.setFontFamily(fontFamily);
         }
 
-        public int getFontSize()
+        public void setAttributeContext(Attributes attributes)
         {
-            return fontSize;
+            this.attributes = attributes;
         }
 
-        public void setFontSize(int fontSize)
+        public Attributes GetAttributeContext()
         {
-            this.fontSize=fontSize;
-        }
-
-        public bool isBold_()
-        {
-            return isBold;
-        }
-
-        public void setBold(bool bold)
-        {
-            this.isBold=isBold;
+            return this.attributes;
         }
 
         public void render()
         {
-            Console.WriteLine($"({row},{column}): {content} [{fontFamily}]");
+            Console.WriteLine($"({row},{column}): {content} [{this.attributes.getFontFamily()}]");
         }
+
+
     }
 }
