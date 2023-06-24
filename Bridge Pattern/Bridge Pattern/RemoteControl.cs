@@ -4,18 +4,25 @@ using System.Text;
 
 namespace Bridge_Pattern
 {
-    //For Sony 
-        //SonyRemoteControl
-        //SonyAdvanceRemoteControl
-    //For Samsung
-        //SamsungRemoteControl
-        //SamsungAdvanceRemoteControl
 
-    public abstract class RemoteControl
+    public class RemoteControl
     {
-        public abstract void turnOn();
+        protected IDevice device;
 
-        public abstract void turnOff();
+        public RemoteControl(IDevice device)
+        {
+            this.device = device;
+        }
+
+        public void turnOn()
+        {
+            device.turnOn();
+        }
+
+        public void turnOff()
+        {
+            device.turnOff();
+        }
 
     }
 }

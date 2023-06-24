@@ -4,19 +4,19 @@ using System.Text;
 
 namespace Bridge_Pattern
 {
-    public class SonyAdvanceRemoteControl : AdvanceRemoteControl
+    public class SonyTV : IDevice
     {
-        public override void setChannel(int channel)
+        public void setChannel(int channel)
         {
-            Console.WriteLine("Sony set channel");
+            Console.WriteLine("Sony set channel");      
         }
 
-        public override void turnOff()
+        public void turnOff()
         {
             Console.WriteLine("Sony Turn Off");
         }
 
-        public override void turnOn()
+        public void turnOn()
         {
             Console.WriteLine("Sony Turn On");
         }

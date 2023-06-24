@@ -4,8 +4,16 @@ using System.Text;
 
 namespace Bridge_Pattern
 {
-    public abstract class AdvanceRemoteControl : RemoteControl
+    public class AdvanceRemoteControl  : RemoteControl
     {
-        public abstract void setChannel(int channel);
+
+        public AdvanceRemoteControl(IDevice device) : base(device)
+        {
+
+        }
+        public void setChannel(int channel)
+        {
+            device.setChannel(1);
+        }
     }
 }
