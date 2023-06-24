@@ -16,6 +16,15 @@ namespace Bridge_Pattern
             var advanceRemoteControl = new AdvanceRemoteControl(new SonyTV());
 
             advanceRemoteControl.turnOn();
+
+
+            var remoteControl1 = new RemoteControl(new SamsungTV());
+
+            remoteControl1.turnOn();
+
+            var advanceRemoteControl2 = new AdvanceRemoteControl(new SamsungTV());
+
+            advanceRemoteControl2.turnOn();
         }
     }
 }
