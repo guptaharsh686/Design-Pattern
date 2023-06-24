@@ -18,6 +18,8 @@ namespace Proxy_Pattern
         private void load()
         {
             Console.WriteLine($"Loading EBook : {fileName}");
+            //here we are initializing/loading from database
+            //we must do this only when it is asked
         }
 
         public void show()
