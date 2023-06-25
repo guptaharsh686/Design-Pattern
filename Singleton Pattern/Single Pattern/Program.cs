@@ -8,14 +8,13 @@ namespace Single_Pattern
         {
             Console.WriteLine("Hello World!");
 
-            var config = new ConfigurationManager();
+            var config = ConfigurationManager.getInstance();
             config.set("wadawd", "adWADadQW");
 
             Console.WriteLine(config.get("wadawd"));
 
-            // the problem
-            var config1 = new ConfigurationManager();
-            // will give null because this is different instance
+            // the solution
+            var config1 = ConfigurationManager.getInstance();
             Console.WriteLine(config1.get("wadawd") == null ? "null" : config1.get("wadawd"));
 
 

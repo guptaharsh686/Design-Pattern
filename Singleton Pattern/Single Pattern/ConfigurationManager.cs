@@ -8,6 +8,23 @@ namespace Single_Pattern
     {
         private Dictionary<string, Object> settings = new Dictionary<string, object>();
 
+        //Requirements
+        // Private Constructor
+        // private static property which stores instance
+        // public static method to get the instance
+
+        private ConfigurationManager()
+        {
+
+        }
+
+        private static ConfigurationManager instance = new ConfigurationManager();
+
+        public static ConfigurationManager getInstance()
+        {
+            return instance;
+        }
+
         public void set(string key,Object value)
         {
             settings.Add(key, value);
