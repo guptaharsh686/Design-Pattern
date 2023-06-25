@@ -24,7 +24,7 @@ namespace Proxy_Pattern_Exercise
             return name;
         }
 
-        public void setName(string name)
+        public virtual void setName(string name)
         {
             this.name = name;
         }

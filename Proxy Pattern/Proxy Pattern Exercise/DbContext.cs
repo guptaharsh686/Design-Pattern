@@ -15,7 +15,7 @@ namespace Proxy_Pattern_Exercise
             Console.WriteLine($"SELECT * FROM products WHERE product_id = {id} \n");
 
             // Simulate reading a product object from a database.
-            var product = new Product(id);
+            var product = new ProductProxy(id,this);
             product.setName("Product 1");
 
             return product;
