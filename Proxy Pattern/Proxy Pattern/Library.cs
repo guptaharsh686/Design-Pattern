@@ -7,16 +7,17 @@ namespace Proxy_Pattern
     public class Library
     {
 
-        private Dictionary<string, Ebook> ebooks = new Dictionary<string, Ebook>();
+        private Dictionary<string, IEbook> ebooks = new Dictionary<string, IEbook>();
 
-        public void add(Ebook ebook)
+        public void add(EBookProxy ebook)
         {
             ebooks.Add(ebook.getfileName(), ebook);
         }
 
         public void openEbook(string fileName)
         {
-            Ebook value;
+            Console.WriteLine("Opening Real EBook");
+            IEbook value;
             ebooks.TryGetValue(fileName,out value);
             value.show();
 

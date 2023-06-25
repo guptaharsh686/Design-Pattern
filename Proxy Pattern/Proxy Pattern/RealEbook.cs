@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Proxy_Pattern
 {
-    public class Ebook
-    {
+    public class RealEbook : IEbook
+    { 
         private string fileName;
 
-        public Ebook(string fileName)
+        public RealEbook(string fileName)
         {
             this.fileName = fileName;
             load();

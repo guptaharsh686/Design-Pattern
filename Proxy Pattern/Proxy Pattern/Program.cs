@@ -14,7 +14,7 @@ namespace Proxy_Pattern
 
             foreach (var fname in fileNames)
             {
-                lib.add(new Ebook(fname));
+                lib.add(new EBookProxy(fname));
             }
 
             lib.openEbook("a"); 
