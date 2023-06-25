@@ -6,5 +6,6 @@ namespace Prototype_Pattern_Exercise
 {
     public interface IComponent
     {
+        IComponent clone();
     }
 }

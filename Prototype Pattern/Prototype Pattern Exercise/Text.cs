@@ -13,6 +13,12 @@ namespace Prototype_Pattern_Exercise
             this.content = content;
         }
 
+        public IComponent clone()
+        {
+            var clone = new Text(this.content);
+            return clone;
+        }
+
         public string getContent()
         {
             return content;

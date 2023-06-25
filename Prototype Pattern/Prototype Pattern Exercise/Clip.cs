@@ -6,5 +6,10 @@ namespace Prototype_Pattern_Exercise
 {
     public class Clip : IComponent
     {
+        public IComponent clone()
+        {
+            var clone = new Clip();
+            return clone;
+        }
     }
 }
