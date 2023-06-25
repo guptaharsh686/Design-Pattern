@@ -8,13 +8,7 @@ namespace Prototype_Pattern
     {
         public void Duplicate(IComponent component)
         {
-            if(component is Circle)
-            {
-                var source = (Circle)component;
-                var dist = new Circle();
-                dist.Radius = source.Radius;
-                Console.WriteLine("Circle duplicated");
-            }
+            IComponent newComponent = component.clone();
         }
     }
 }
