@@ -14,7 +14,7 @@ namespace Factory_Method_Pattern
             Console.WriteLine(html);
         }
 
-        protected ViewEngine GetViewEngine()
+        protected virtual ViewEngine GetViewEngine()
         {
             return new MatchaViewEngine();
         }

@@ -7,6 +7,9 @@ namespace Factory_Method_Pattern
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+
+            new ProductsController().listProducts();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Factory_Method_Pattern
 {
-    public class ProductsController : Controller
+    public class ProductsController : SharpController
     {
         public void listProducts()
         {
