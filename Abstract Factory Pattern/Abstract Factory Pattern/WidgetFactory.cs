@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Abstract_Factory_Pattern
 {
-    public enum Theme
+    public interface WidgetFactory
     {
-        MATERIAL,
-        ANT
+        IButton createButton();
+        ITextBox createTextBox(); 
     }
 }
