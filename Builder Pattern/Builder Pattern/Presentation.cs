@@ -15,23 +15,12 @@ namespace Builder_Pattern
 
 
 
-        public void export(PresentationFormat presentationFormat)
+        public void export(PresentationBuilder builder)
         {
-            if(presentationFormat == PresentationFormat.PDF)
+            builder.addSlide(new Slide("Copyright"));
+            foreach (var slide in slides)
             {
-                var pdfdoc = new PDFDocument();
-                foreach (var slide in slides)
-                {
-                    pdfdoc.addPage(slide.getText());
-                }
-            }
-            else if(presentationFormat == PresentationFormat.MOVIE)
-            {
-                var mov = new Movie();
-                foreach (var slide in slides)
-                {
-                    mov.addFrame(slide.getText(), 3);
-                }
+                builder.addSlide(slide); 
             }
         }
     }
