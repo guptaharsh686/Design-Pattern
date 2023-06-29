@@ -133,3 +133,9 @@
 /Abstract Factory Pattern/Abstract Factory Pattern Exercise/obj
 /Builder Pattern/Builder Pattern/.vs/Builder Pattern/v16
 /Builder Pattern/Builder Pattern/obj
+/Builder Pattern/Builder Pattern Exercise/.vs/Builder Pattern Exercise/v16
+/Builder Pattern/Builder Pattern Exercise/obj
+*.json
+/Builder Pattern/Builder Pattern Exercise/bin/Debug/netcoreapp3.1/Builder Pattern Exercise.dll
+/Builder Pattern/Builder Pattern Exercise/bin/Debug/netcoreapp3.1/Builder Pattern Exercise.exe
+/Builder Pattern/Builder Pattern Exercise/bin/Debug/netcoreapp3.1/Builder Pattern Exercise.pdb
