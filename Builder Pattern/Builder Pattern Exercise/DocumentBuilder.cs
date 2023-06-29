@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Builder_Pattern_Exercise
 {
-    public enum ExportFormat
+    public interface DocumentBuilder
     {
-        HTML,
-        TEXT,
-        PDF,
+        void add(Element element);
+
+        string getContent();
     }
 }

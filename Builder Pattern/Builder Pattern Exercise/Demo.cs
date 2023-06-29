@@ -12,10 +12,10 @@ namespace Builder_Pattern_Exercise
             document.add(new Text("Hello World"));
             document.add(new Image("pic1.jpg"));
 
-            document.export(ExportFormat.HTML, "export.html");
+            document.export(new HTMLBuilder(), "export.html");
 
             // Only writes the text elements to the file
-            document.export(ExportFormat.TEXT, "export.txt");
+            document.export(new TextBuilder(), "export.txt");
         }
 }
 }
